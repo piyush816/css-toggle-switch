@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        font-family: sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 1rem 2rem;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        margin: 0 3rem;
+      }
+
+      .slider {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 4rem;
+        background-color: #d2dae2;
+        height: 2rem;
+        border-radius: 2rem;
+        transition: background-color 0.4s;
+      }
+
+      .switch input {
+        display: none;
+      }
+
+      .slider::before {
+        position: absolute;
+        content: "";
+        width: 1.5rem;
+        height: 1.5rem;
+        left: 5px;
+        bottom: 5px;
+        border-radius: 50%;
+        background-color: white;
+        transition: transform 0.4s;
+      }
+
+      input:checked + .slider {
+        background-color: #3498db94;
+      }
+
+      input:checked + .slider::before {
+        transform: translateX(30px);
+        background-color: #2980b9;
+        display: grid;
+        place-items: center;
+        color: #fff;
+      }
+
+      .switch-success input:checked + .slider {
+        background-color: #2ecc7194;
+      }
+      .switch-success input:checked + .slider::before {
+        background-color: #27ae60;
+      }
+
+      .switch-error input:checked + .slider::before {
+        background-color: #ff3f34;
+      }
+
+      .switch-error input:checked + .slider {
+        background-color: #ff5f5794;
+      }
+
+      .switch-warning input:checked + .slider {
+        background-color: #ffbf4894;
+      }
+      .switch-warning input:checked + .slider::before {
+        background-color: #ffa801;
+      }
+    </style>
+  </head>
+  <body>
+    <label class="switch">
+      <input type="checkbox" checked />
+      <span class="slider"></span>
+    </label>
+    <label class="switch switch-error">
+      <input type="checkbox" checked />
+      <span class="slider"></span>
+    </label>
+    <label class="switch switch-success">
+      <input type="checkbox" checked />
+      <span class="slider"></span>
+    </label>
+    <label class="switch switch-warning">
+      <input type="checkbox" checked />
+      <span class="slider"></span>
+    </label>
+  </body>
+</html>
